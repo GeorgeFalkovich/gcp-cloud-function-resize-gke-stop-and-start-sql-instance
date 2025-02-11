@@ -34,7 +34,7 @@ CLOUD_SQL_INSTANCE: "example-sql-instance"
 
 ### **2️⃣ Deploy the Function**
 
-For security purposes, this function should be deployed for **authenticated users only**. Ensure that Cloud Scheduler is configured with Auth OIDC header with a service account with that has **Cloud Run Invoker** and **Cloud Functions Admin** roles.
+For security purposes, this function should be deployed for **authenticated users only**. Ensure that Cloud Scheduler is configured with Auth OIDC header with a service account which has **Cloud Run Invoker** and **Cloud Functions Admin** roles.
 
 This function can be deployed via the **GCP UI Console** or using the CLI.
 
@@ -67,7 +67,7 @@ You can manually **resize your cluster and manage Cloud SQL** by sending an HTTP
   curl -X GET "https://REGION-PROJECT-ID.cloudfunctions.net/resize-node-pools" -H "Authorization: Bearer $(gcloud auth print-identity-token)"
   ```
 
-  > **If no ************************\*\***************************\*\***************************\*\***************************`size`************************\*\*\*\*************************\*\*\*\*************************\*\*\*\************************* is specified, the default is ************************\*\*\*\*************************\*\*\*\*************************\*\*\*\*************************`0`************************\*\*\*\*************************\*\*\*\*************************\*\*\*\************************* (scale down).\*\*
+  > **If no **********\*\*************\*\*************\*\*************\*\*************\*\*************\*\*************\*\*************`size`**********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\*********** is specified, the default is **********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********`0`**********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\*********** (scale down).\*\*
 
 ---
 
