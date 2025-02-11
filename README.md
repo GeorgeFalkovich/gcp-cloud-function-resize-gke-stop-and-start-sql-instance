@@ -2,7 +2,7 @@
 
 ### **Overview**
 
-This **smart, automated Google Cloud Function** is designed to \*\*reduce costs by scaling down GKE regional node pools, stopping Cloud SQL instances during off-hours (e.g., nighttime, weekends), and scaling them back up automatically when needed. The function can be **scheduled to run automatically** at a defined time or **manually triggered via an HTTP request**.
+This **smart, automated Google Cloud Function** is designed to reduce costs by scaling down GKE regional node pools, stopping Cloud SQL instances during off-hours (e.g., nighttime, weekends), and scaling them back up automatically when needed. The function can be **scheduled to run automatically** at a defined time or **manually triggered via an HTTP request**.
 
 It intelligently detects whether **one or multiple node pools** need to be resized and **simultaneously stops or starts the associated Cloud SQL instance** based on the cluster size.
 
@@ -67,7 +67,7 @@ You can manually **resize your cluster and manage Cloud SQL** by sending an HTTP
   curl -X GET "https://REGION-PROJECT-ID.cloudfunctions.net/resize-node-pools" -H "Authorization: Bearer $(gcloud auth print-identity-token)"
   ```
 
-  > **If no ****************************************************\*\*******************************************************`size`****************************************************\*\*\*\***************************************************** is specified, the default is ****************************************************\*\*\*\*****************************************************`0`****************************************************\*\*\*\***************************************************** (scale down).\*\*
+  > **If no ************************\*\***************************\*\***************************\*\***************************`size`************************\*\*\*\*************************\*\*\*\*************************\*\*\*\************************* is specified, the default is ************************\*\*\*\*************************\*\*\*\*************************\*\*\*\*************************`0`************************\*\*\*\*************************\*\*\*\*************************\*\*\*\************************* (scale down).\*\*
 
 ---
 
