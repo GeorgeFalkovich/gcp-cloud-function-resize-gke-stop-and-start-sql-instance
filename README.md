@@ -76,12 +76,18 @@ You can manually **resize your cluster and manage Cloud SQL** by sending an HTTP
 
 ### **4️⃣ Automate with Cloud Scheduler**
 
-To automatically run the function at night or during off-peak hours, create a **Cloud Scheduler job**:
+To automatically run the function at night or during off-peak hours, create a **Cloud Scheduler job**.
+
+**Use GCP UI console (with OIDC auth header and service account) for more convient way.**
+
+Or run using gcloud cli as in dcoumentation: https://cloud.google.com/scheduler/docs/creating#create
+
+**For example:**
 
 ```bash
 gcloud scheduler jobs create http scale-down-gke \
     --schedule "0 22 * * *" \
-    --uri "https://REGION-PROJECT-ID.cloudfunctions.net/resize-node-pools?size=0" \
+    --uri "https://REGION-PROJECT-ID.cloudfunctions.net/resize-node-pools" \
     --http-method GET
 ```
 
