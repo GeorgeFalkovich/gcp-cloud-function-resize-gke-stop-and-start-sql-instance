@@ -37,6 +37,8 @@ CLOUD_SQL_INSTANCE: "my-sql-instance"
 
 For security purposes, this function should be deployed for **authenticated users only**. Ensure that Cloud Scheduler is configured with Auth OIDC header with a service account which has **Cloud Run Invoker** and **Cloud Functions Admin** roles.
 
+For test you may leave it for all unauthenticaed users.
+
 This function can be deployed via the **GCP UI Console** or using the CLI.
 
 Or use the command in `gcloud-cli.sh` script to deploy the function:
@@ -102,10 +104,9 @@ This will **automatically scale down at 10 PM and scale up at 7 AM** every day.
 2. **Checks the URL parameter** `?size=`:
    - If no size is provided → **Defaults to 0** (scale down).
    - If size > 0 → **Resizes to that value**.
-3. **Resizes regional GKE node pools** using `setSize()`.
-4. If size == **0**, **stops Cloud SQL**.
-5. If size > **0**, **starts Cloud SQL**.
-6. Logs every action for easy debugging.
+3. If size == **0**, **stops Cloud SQL**.
+4. If size > **0**, **starts Cloud SQL**.
+5. Logs every action for easy debugging.
 
 ---
 
