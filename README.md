@@ -13,6 +13,7 @@ It intelligently detects whether **one or multiple node pools** need to be resiz
 ✅ **Cloud SQL Management**: **Stops Cloud SQL** when node pools are resized to zero, and **starts it back** when node pools are resized above zero.\
 ✅ **Supports Manual & Scheduled Execution**: Run via **HTTP trigger** (URL args `?size=3`) or schedule via **Cloud Scheduler**.\
 ✅ **Customizable with Environment Variables**: Uses **env.yaml** for easy configuration.
+✅ **Can be securely configured in accordance with Google's best practices.**
 
 ---
 
@@ -23,11 +24,11 @@ It intelligently detects whether **one or multiple node pools** need to be resiz
 Before deploying, edit the `env.yaml` file with your project and cluster details:
 
 ```yaml
-PROJECT_ID: "your-gcp-project-id"
+PROJECT_ID: "my-gcp-project-id"
 REGION: "us-central1"
 CLUSTER_ID: "my-gke-cluster"
 NODE_POOLS: "first-pool,second-pool" # Comma-separated list of node pools
-CLOUD_SQL_INSTANCE: "example-sql-instance"
+CLOUD_SQL_INSTANCE: "my-sql-instance"
 ```
 
 ---
