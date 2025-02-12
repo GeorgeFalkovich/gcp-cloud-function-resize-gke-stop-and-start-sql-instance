@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO)
 
 
 @functions_framework.http
-def resize_node_pools(request):
+def resize_node_pools_sql(request):
     """
     Cloud Function to resize multiple GKE node pools and optionally stop/start a Cloud SQL instance.
     Triggered by an HTTP request.

@@ -3,6 +3,6 @@ gcloud functions deploy resize-pools-sql \
     --region=us-central1 \
     --runtime=python312 \
     --source=. \
-    --entry-point=resize_node_pools \
+    --entry-point=resize_node_pools_sql \
     --trigger-http \
     --env-vars-file=env.yaml
