@@ -1,4 +1,4 @@
-## **GCP Regional Cluster Auto-Scaler with Cloud SQL Management**
+## **Automated GCP Regional Cluster and Cloud SQL Cost-Saving Auto-Scaler**
 
 ### **Overview**
 
