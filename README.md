@@ -67,7 +67,7 @@ You can manually **resize your cluster and manage Cloud SQL** by sending an HTTP
   curl -X GET "https://REGION-PROJECT-ID.cloudfunctions.net/resize-node-pools" -H "Authorization: Bearer $(gcloud auth print-identity-token)"
   ```
 
-  > **If no **********\*\*************\*\*************\*\*************\*\*************\*\*************\*\*************\*\*************`size`**********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\*********** is specified, the default is **********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********`0`**********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\***********\*\*\*\*********** (scale down).\*\*
+  > \*\*If no `size` is specified, the default is `0` (scale down).
 
 ---
 
@@ -79,7 +79,7 @@ To automatically run the function at night or during off-peak hours, create a **
 gcloud scheduler jobs create http scale-down-gke \
     --schedule "0 22 * * *" \
     --uri "https://REGION-PROJECT-ID.cloudfunctions.net/resize-node-pools?size=0" \
-    --http-method POST
+    --http-method GET
 ```
 
 To **scale up in the morning**:
@@ -88,7 +88,7 @@ To **scale up in the morning**:
 gcloud scheduler jobs create http scale-up-gke \
     --schedule "0 7 * * *" \
     --uri "https://REGION-PROJECT-ID.cloudfunctions.net/resize-node-pools?size=3" \
-    --http-method POST
+    --http-method GET
 ```
 
 This will **automatically scale down at 10 PM and scale up at 7 AM** every day.
